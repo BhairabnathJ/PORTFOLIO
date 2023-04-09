@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Yes",
+  "main": "no",
+  "scripts": {
+    "test": "men",
+    "start": "node CONTACT/server.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "PORTFOLIO"
+  },
+  "keywords": [
+    "PF"
+  ],
+  "devDependencies": {
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "author": "BHAIRABNATH JAMKATEL",
+  "license": "MIT"
+}

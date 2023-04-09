@@ -1,31 +1,38 @@
-// Get the form element
-var form = document.getElementById('contact-form');
+const form = document.getElementById('contact-form')
 
-// Attach an event listener to the form submit event
-form.addEventListener('submit', function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
 
-    // Get the form data
-    var formData = new FormData(form);
-
-    // Send the form data to the server using AJAX
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'CONTACT/send-email.php');
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            // If the request was successful, check the response
-            if (xhr.responseText === 'success') {
-                // Display a success message
-                alert('Your message has been sent.');
-            } else {
-                // Display an error message
-                alert('There was an error sending your message. Please try again later.');
-            }
-        } else {
-            // Display an error message
-            alert('There was an error sending your message. Please try again later.');
+    const data = new URLSearchParams(new FormData(form))
+    const request = fetch(
+        'http://127.0.0.1:5500/contact/send-email.php',
+        {
+            method: 'post',
+            body: data
         }
-    };
-    xhr.send(formData);
-});
+    ).then(res => {
+        // Handle your response
+    }).catch(err => {
+        // Handle your error
+    })
+
+    const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.post('http://127.0.0.1:5500/contact/send-email.php', (req, res) => {
+  // Do whatever here to process your emails
+  const name = req.body.name
+  const email = req.body.email
+  const message = req.body.message
+  res.send('POST request recieved')
+})
+
+app.listen(5500, () => {
+  console.log(`Example app listening on port ${5500}`)
+})
+})

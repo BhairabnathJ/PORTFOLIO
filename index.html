@@ -4,14 +4,20 @@
 	<title>My Portfolio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5M+7b0Uf1Zl7Jjg2UIdwGkIoaKyjcvRc9XCt2J2D" crossorigin="anonymous"></script>
+
 </head>
 <body>
+	<div class="scrollbar" id="style-1">
+		<div class="force-overflow"></div>
+	  </div>
+
 	<header>
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
 				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="about.html">About</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
@@ -55,7 +61,7 @@
 
 	<section class="contact">
 		<h2>Contact Me</h2>
-		<form id="contact-form" method="POST" action="CONTACT/send-email.js">
+		<form id="contact-form" method="POST">
 			<input type="text" name="name" placeholder="Name">
 			<input type="email" name="email" placeholder="Email">
 			<textarea name="message" placeholder="Message"></textarea>
@@ -63,11 +69,14 @@
 		</form>
 	</section> 
 
+	<script src="CONTACT/server.js"></script>
+	<script src="CSS/scroll.js"></script>
 
+<!--
     <script src="CONTACT/send-email.js"></script>
 	<script src="node_modules/CONTACT/server.js"></script>
 	<script src="CONTACT/bundle.js"></script>
-
+-->
 	<footer class="COPY">
 		<p>&copy; Bhairabnath Jamkatel 2023</p>
 	</footer>
